@@ -11,9 +11,9 @@ export class DashboardComponent implements OnInit {
   constructor(private viggoService: ViggoService) { }
 
   ngOnInit() {
+    this.viggoService.emit("dashboard");
   }
 
   requestInfo() {
-    this.viggoService.emit("dashboard");
   }
 }
