@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ViggoService } from "../../services/viggo.service";
+import { ViggoEvent } from '../../models/viggo-event.model';
 
 @Component({
   selector: 'app-viggo-panel',
@@ -8,16 +9,16 @@ import { ViggoService } from "../../services/viggo.service";
 })
 export class ViggoPanelComponent implements OnInit {
 
-  isVisible = false;
+  currentViggoEvent: ViggoEvent;
+
+  popContent: ElementRef;
 
   constructor(private viggoService: ViggoService) { }
 
   ngOnInit() {
-
     this.viggoService.eventsSubject.subscribe(res => {
-      if (res && res.name === "ValidationFailed") {
-        this.isVisible = true;
-      }
+      this.currentViggoEvent = res;
+      if (this.popContent) {(<any>this.popContent).open();}
     });
   }
 }

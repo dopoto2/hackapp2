@@ -1,1 +1,6 @@
-<p *ngIf="isVisible">viggo-panel works!</p>
+<div *ngIf="currentViggoEvent?.name === 'StuckInField'" class="container">
+  <ng-template #popContent>test</ng-template>
+  <ng-template #popTitle>Fancy <b>content!!</b></ng-template>
+  <img [ngbPopover]="popContent" [popoverTitle]="popTitle"
+       class="viggo-logo" src="../../../assets/visma-mov.gif" />
+</div>

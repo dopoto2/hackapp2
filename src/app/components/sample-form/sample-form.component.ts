@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViggoService } from "../../services/viggo.service";
 
 @Component({
   selector: 'app-sample-form',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private viggoService: ViggoService) { }
 
   ngOnInit() {
   }
 
+  requestInfo() {
+    this.viggoService.emit("StuckInField");
+  }
 }
