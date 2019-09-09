@@ -1,36 +1,121 @@
-<div *ngIf="currentViggoEvent?.name === 'StuckInField'" class="container">
-  <div class="info-panel">
-    <b>Looks like you're having trouble with the IBAN field</b>
-    <br />
-    <br />
-    Don't worry, you're not alone....
-  </div>
-  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-  <button (click)="close()" class="btn btn-success close-button">Close</button>
-</div>
-
-
-<div *ngIf="currentViggoEvent?.name === 'ValidationFailed'" class="container">
-  <div class="info-panel">
-    <b>Looks like you're having trouble with Some Complex Field</b>
-    <br />
-    <br />
-    fiedtred
-  </div>
-  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-  <button (click)="close()" class="btn btn-success close-button">Close</button>
-</div>
-
-
-<div *ngIf="currentViggoEvent?.name === 'dashboard'" class="container">
+<div class="container" *ngIf="currentViggoEvent?.name === 'StuckInField'">
   <div class="info-panel">
     <b>
-      Looks like you're trying to get more information in details.
+      Looks like you're having trouble filling out the IBAN number...
+
     </b>
     <br />
     <br />
-    Please go to this screen.
+    Your IBAN number is SE12345633333. Would you like me to fill that in for you?
+
+    <br /><br />
+    <button class="btn btn-success">Yes, use this one!</button>
+    <br />
+    <br />
+
+
+    <a href="javascript:void(0)" (click)="isIbanHelperVisible = !isIbanHelperVisible">What is IBAN?</a>
+
+    <div *ngIf="isIbanHelperVisible" class="what-is">
+      <div (click)="isIbanHelperVisible = false" class="close">X</div>
+      <br />
+      IBAN (International Bank Account Number) is an international standard used to specify an account number.
+      You need an IBAN to be able to receive payments directly to your account from foreign payers or if you want to /pay a foreign customer.
+      IBAN is intended to supplement the regular account number.
+    </div>
+
+
+
+    <div class="arrow-down"></div>
+    <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+
+
   </div>
-  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-  <button (click)="close()" class="btn btn-success close-button">Close</button>
+  <span class="thanks">
+    <input type="checkbox" /> Thanks, won't need your help with IBAN numbers from now on.
+  </span>
+  <button (click)="close()" class="btn btn-primary close-button">Close</button>
+</div>
+
+<div class="container" *ngIf="currentViggoEvent?.name === 'ValidationFailed'">
+  <div class="info-panel">
+    <b>
+      Looks like you're having trouble with our Measure Definition Formula
+
+    </b>
+    <br />
+    <br />
+    Don't worry about it! We know, Measure Definitions can be quite complex...
+    <br/> <br/>
+
+    Here is a quick reminder
+    of the formats we're accepting for this field:
+    <br /><br />
+
+
+
+    <div class="what-is">
+      <div class="popover-content popover-body"><table
+                                                  class="table table-condensed">
+        <thead _ngcontent-hkh-c4=""><tr _ngcontent-hkh-c4=""><th _ngcontent-hkh-c4="" class="samples-column">Operator</th><th _ngcontent-hkh-c4="">Description</th></tr></thead><tbody _ngcontent-hkh-c4=""><tr _ngcontent-hkh-c4=""><td _ngcontent-hkh-c4=""><code _ngcontent-hkh-c4="">@</code></td><td _ngcontent-hkh-c4="">Account class</td></tr><tr _ngcontent-hkh-c4=""><td _ngcontent-hkh-c4=""><code _ngcontent-hkh-c4="">[start_account-end_acount]</code></td><td _ngcontent-hkh-c4="">Range of accounts</td></tr><tr _ngcontent-hkh-c4=""><td _ngcontent-hkh-c4=""><code _ngcontent-hkh-c4="">!</code></td><td _ngcontent-hkh-c4="">Exclude account or account range</td></tr><tr _ngcontent-hkh-c4=""><td _ngcontent-hkh-c4=""><code _ngcontent-hkh-c4="">-</code></td><td _ngcontent-hkh-c4="">Change sign</td></tr><tr _ngcontent-hkh-c4=""><td _ngcontent-hkh-c4=""><code _ngcontent-hkh-c4="">,</code></td><td _ngcontent-hkh-c4="">Enumeration symbol</td></tr></tbody>
+      </table></div>
+    </div>
+
+
+
+    <div class="arrow-down"></div>
+    <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+
+
+  </div>
+  <span class="thanks">
+    <input type="checkbox" /> Thanks, won't need your help with Measure Definitions from now on.
+  </span>
+  <button (click)="close()" class="btn btn-primary close-button">Close</button>
+</div>
+
+
+<div class="container" *ngIf="currentViggoEvent?.name === 'dashboard'">
+  <div class="info-panel">
+    <b>
+      Looks like there is a problem with invoice 12323111...
+    </b>
+    <br />
+    <br />
+    Here are some suggestions of windows where you can fix it, based on what other users have done.
+    <ul>
+      <li><a href="#">Ledger</a></li>
+      <li><a href="#">Invoice</a></li>
+      <li><a href="#">Void invoice </a></li>
+    </ul>
+
+    <div class="arrow-down"></div>
+    <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+  </div>
+  <span class="thanks">
+    <input type="checkbox" /> Thanks, won't need your help with Measure Definitions from now on.
+  </span>
+  <button (click)="close()" class="btn btn-primary close-button">Close</button>
+</div>
+
+<div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboarddd'">
+  <b>
+    Looks like there is a problem with invoice 12323111...
+  </b>
+  <br />
+  <br />
+  Here are some suggestions of windows where you can fix it, based on what other users have done.
+  <ul>
+    <li><a href="#">Ledger</a></li>
+    <li><a href="#">Invoice</a></li>
+    <li><a href="#">Void invoice </a></li>
+  </ul>
+
+  <hr>
+  Did you find it helpful?             <a href="$"> YES</a>    NO
+
+  <!--<a><img src="https://image.flaticon.com/icons/png/512/25/25297.png" style="width:50px;height:50px" /></a>-->
 </div>

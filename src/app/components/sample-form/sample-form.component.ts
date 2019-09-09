@@ -49,7 +49,6 @@ export class SampleFormComponent implements OnInit {
     fieldValidationInput$
       .subscribe(() => {
         const val = (<any>this.fieldValidationInput.nativeElement).value;
-        console.log("Got val" + val);
         if (val === "") {
           this.isValidationError = false;
         }

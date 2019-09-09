@@ -11,6 +11,8 @@ export class ViggoPanelComponent implements OnInit {
 
   currentViggoEvent: ViggoEvent;
 
+  isIbanHelperVisible = false;
+
   constructor(private viggoService: ViggoService) { }
 
   ngOnInit() {
@@ -21,5 +23,9 @@ export class ViggoPanelComponent implements OnInit {
 
   close() {
     this.currentViggoEvent = null;
+  }
+
+  showIbanHelper() {
+    this.isIbanHelperVisible = true;
   }
 }
