@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Page1Component } from './page1/page1.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ViggoPanelComponent } from './components/viggo-panel/viggo-panel.component';
+import { SampleFormComponent } from './components/sample-form/sample-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Page1Component,
-    NavbarComponent
+    DashboardComponent,
+    NavbarComponent,
+    ViggoPanelComponent,
+    SampleFormComponent
   ],
   imports: [
     BrowserModule,
