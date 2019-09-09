@@ -25,11 +25,21 @@
 <div *ngIf="currentViggoEvent?.name === 'dashboard'" class="container">
   <div class="info-panel">
     <b>
-      Looks like you're trying to get more information in details.
+      Looks like there is a problem with invoice 12323111...
     </b>
     <br />
     <br />
-    Please go to this screen.
+    Here are some suggestions of windows where you can fix it, based on what other users have done.
+    <ul>
+      <li><a href="#">Ledger</a></li>
+      <li><a href="#">Invoice</a></li>
+      <li><a href="#">Void invoice </a></li>
+    </ul>
+
+    <hr>
+    Did you find it helpful?             <a href="$"> YES</a>    NO
+
+    <!--<a><img src="https://image.flaticon.com/icons/png/512/25/25297.png" style="width:50px;height:50px" /></a>-->
   </div>
   <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
   <button (click)="close()" class="btn btn-success close-button">Close</button>
