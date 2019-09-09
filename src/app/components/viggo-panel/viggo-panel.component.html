@@ -77,12 +77,45 @@
 </div>
 
 
+<div class="container" *ngIf="currentViggoEvent?.name === 'dashboard'">
+  <div class="info-panel">
+    <b>
+      Looks like there is a problem with invoice 12323111...
+    </b>
+    <br />
+    <br />
+    Here are some suggestions of windows where you can fix it, based on what other users have done.
+    <ul>
+      <li><a href="#">Ledger</a></li>
+      <li><a href="#">Invoice</a></li>
+      <li><a href="#">Void invoice </a></li>
+    </ul>
 
-<div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboard'">
+    <div class="arrow-down"></div>
+    <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+  </div>
+  <span class="thanks">
+    <input type="checkbox" /> Thanks, won't need your help with Measure Definitions from now on.
+  </span>
+  <button (click)="close()" class="btn btn-primary close-button">Close</button>
+</div>
+
+<div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboarddd'">
   <b>
-    Looks like you're trying to get more information in details.
+    Looks like there is a problem with invoice 12323111...
   </b>
   <br />
   <br />
-  Please go to this screen.
+  Here are some suggestions of windows where you can fix it, based on what other users have done.
+  <ul>
+    <li><a href="#">Ledger</a></li>
+    <li><a href="#">Invoice</a></li>
+    <li><a href="#">Void invoice </a></li>
+  </ul>
+
+  <hr>
+  Did you find it helpful?             <a href="$"> YES</a>    NO
+
+  <!--<a><img src="https://image.flaticon.com/icons/png/512/25/25297.png" style="width:50px;height:50px" /></a>-->
 </div>
