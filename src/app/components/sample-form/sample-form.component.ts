@@ -14,6 +14,6 @@ export class SampleFormComponent implements OnInit {
   }
 
   requestInfo() {
-    this.viggoService.emit("ValidationFailed");
+    this.viggoService.emit("StuckInField");
   }
 }

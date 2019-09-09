@@ -7,15 +7,22 @@ import { ViggoEvent } from "../models/viggo-event.model";
 })
 export class ViggoService {
 
-  const data = [
-    { name: "ValidationFailed" }
+  data = [
+    {
+      name: "StuckInField",
+      title: "Looks like you're having trouble with this field"
+    },
+    {
+      name: "SomeOtherScenario",
+      title: "Some other text..."
+    }
+    // ADD MORE SCENARIOS HERE...
   ];
 
   eventsSubject = new BehaviorSubject<ViggoEvent>(<ViggoEvent>{});
 
   emit(eventName: string) {
-    // TODO Load from list
-    const event = <ViggoEvent>{ name: eventName };
-    this.eventsSubject.next(event);
+    const infoToShow = this.data.find(_ => _.name === eventName);
+    this.eventsSubject.next(infoToShow);
   }
 }
