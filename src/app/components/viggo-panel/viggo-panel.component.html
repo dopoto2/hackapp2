@@ -6,6 +6,7 @@
     Don't worry, you're not alone....
   </div>
   <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+  <button (click)="close()" class="btn btn-success close-button">Close</button>
 </div>
 <div *ngIf="currentViggoEvent?.name === 'ValidationFailed'" class="container">
   <div class="info-panel">
@@ -15,6 +16,5 @@
     fiedtred
   </div>
   <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-
   <button (click)="close()" class="btn btn-success close-button">Close</button>
 </div>
