@@ -13,6 +13,10 @@ export class ViggoService {
       title: "Looks like you're having trouble with this field"
     },
     {
+      name: "ValidationFailed",
+      title: "Looks like you're having trouble with this field"
+    },
+    {
       name: "dashboard",
       title: "Some other text..."
     },
