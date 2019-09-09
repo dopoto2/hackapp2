@@ -13,7 +13,6 @@ export class ViggoPanelComponent implements OnInit {
   constructor(private viggoService: ViggoService) { }
 
   ngOnInit() {
-
     this.viggoService.eventsSubject.subscribe(res => {
       if (res && res.name === "ValidationFailed") {
         this.isVisible = true;

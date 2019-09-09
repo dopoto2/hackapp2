@@ -7,11 +7,15 @@ import { ViggoEvent } from "../models/viggo-event.model";
 })
 export class ViggoService {
 
-  eventsSubject = new BehaviorSubject<ViggoEvent>(<ViggoEvent>{}); 
+  const data = [
+    { name: "ValidationFailed" }
+  ];
 
-  emit(event: ViggoEvent) {
+  eventsSubject = new BehaviorSubject<ViggoEvent>(<ViggoEvent>{});
+
+  emit(eventName: string) {
+    // TODO Load from list
+    const event = <ViggoEvent>{ name: eventName };
     this.eventsSubject.next(event);
   }
-
-
 }
