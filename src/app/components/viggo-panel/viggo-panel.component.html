@@ -1,29 +1,21 @@
-<div *ngIf="currentViggoEvent?.name === 'StuckInField'" class="container">
-  <div class="info-panel">
-    <b>Looks like you're having trouble with the IBAN field</b>
+<div class="container" *ngIf="currentViggoEvent">
+  <div class="info-panel" *ngIf="currentViggoEvent?.name === 'StuckInField'">
+    <b>
+      Looks like you're trying to get more information in details.
+    </b>
     <br />
     <br />
-    Don't worry, you're not alone....
+    Please go to this screen.
   </div>
-  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-  <button (click)="close()" class="btn btn-success close-button">Close</button>
-</div>
 
-
-<div *ngIf="currentViggoEvent?.name === 'ValidationFailed'" class="container">
-  <div class="info-panel">
+  <div class="info-panel" *ngIf="currentViggoEvent?.name === 'ValidationFailed'">
     <b>Looks like you're having trouble with Some Complex Field</b>
     <br />
     <br />
     fiedtred
   </div>
-  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-  <button (click)="close()" class="btn btn-success close-button">Close</button>
-</div>
 
-
-<div *ngIf="currentViggoEvent?.name === 'dashboard'" class="container">
-  <div class="info-panel">
+  <div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboard'">
     <b>
       Looks like there is a problem with invoice 12323111...
     </b>
@@ -41,6 +33,7 @@
 
     <!--<a><img src="https://image.flaticon.com/icons/png/512/25/25297.png" style="width:50px;height:50px" /></a>-->
   </div>
+  <div class="arrow-down"></div>
   <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
   <button (click)="close()" class="btn btn-success close-button">Close</button>
 </div>
