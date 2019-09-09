@@ -9,6 +9,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ViggoPanelComponent } from './components/viggo-panel/viggo-panel.component';
 import { SampleFormComponent } from './components/sample-form/sample-form.component';
+import { PredictedSettingsPageComponent } from './components/predicted-settings-page/predicted-settings-page.component';
+import { PredictionFormComponent } from './components/prediction-form/prediction-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SampleFormComponent } from './components/sample-form/sample-form.compon
     DashboardComponent,
     NavbarComponent,
     ViggoPanelComponent,
-    SampleFormComponent
+    SampleFormComponent,
+    PredictedSettingsPageComponent,
+    PredictionFormComponent
   ],
   imports: [
     BrowserModule,
