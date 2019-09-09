@@ -1,29 +1,60 @@
-<div class="container" *ngIf="currentViggoEvent">
-  <div class="info-panel" *ngIf="currentViggoEvent?.name === 'StuckInField'">
+<div class="container" *ngIf="currentViggoEvent?.name === 'StuckInField'">
+  <div class="info-panel">
     <b>
-      Looks like you're trying to get more information in details.
+      Looks like you're having trouble filling out the IBAN number...
+
     </b>
     <br />
     <br />
-    Please go to this screen.
-  </div>
+    Your IBAN number is SE12345633333. Would you like me to fill that in for you?
 
-  <div class="info-panel" *ngIf="currentViggoEvent?.name === 'ValidationFailed'">
-    <b>Looks like you're having trouble with Some Complex Field</b>
+    <br /><br />
+    <button class="btn btn-success">Yes, use this one!</button>
     <br />
     <br />
-    fiedtred
-  </div>
 
-  <div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboard'">
-    <b>
-      Looks like you're trying to get more information in details.
-    </b>
-    <br />
-    <br />
-    Please go to this screen.
+
+    <a href="javascript:void(0)" (click)="isIbanHelperVisible = !isIbanHelperVisible">What is an IBAN number?</a>
+
+    <div *ngIf="isIbanHelperVisible" class="what-is">
+      <div (click)="isIbanHelperVisible = false" class="close">X</div>
+      <br />
+      IBAN (International Bank Account Number) is an international standard used to specify an account number.
+      You need an IBAN to be able to receive payments directly to your account from foreign payers or if you want to /pay a foreign customer.
+      IBAN is intended to supplement the regular account number.
+    </div>
+
+
+
+    <div class="arrow-down"></div>
+    <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+
+
   </div>
+  <span class="thanks">
+    <input type="checkbox" /> Thanks, won't need your help with IBAN numbers from now on. 
+  </span>
+  <button (click)="close()" class="btn btn-primary close-button">Close</button>
+</div>
+
+
+
+<div class="info-panel" *ngIf="currentViggoEvent?.name === 'ValidationFailed'">
+  <b>Looks like you're having trouble with Some Complex Field</b>
+  <br />
+  <br />
+  fiedtred
   <div class="arrow-down"></div>
   <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-  <button (click)="close()" class="btn btn-success close-button">Close</button>
+  <button (click)="close()" class="btn btn-primary close-button">Close</button>
+</div>
+
+<div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboard'">
+  <b>
+    Looks like you're trying to get more information in details.
+  </b>
+  <br />
+  <br />
+  Please go to this screen.
 </div>
