@@ -1,6 +1,16 @@
 <div *ngIf="currentViggoEvent?.name === 'StuckInField'" class="container">
-  <ng-template #popContent>test</ng-template>
-  <ng-template #popTitle>Fancy <b>content!!</b></ng-template>
-  <img [ngbPopover]="popContent" [popoverTitle]="popTitle"
-       class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+  <div class="info-panel">
+    <b>
+      Looks like you're having trouble with this field
+    </b>
+    <br/>
+    <br/>
+    dfdf
+
+  </div>
+
+  <img class="viggo-logo" src="../../../assets/visma-mov.gif"/>
+
+
 </div>
