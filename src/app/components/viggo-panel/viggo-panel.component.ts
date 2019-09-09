@@ -18,4 +18,8 @@ export class ViggoPanelComponent implements OnInit {
       this.currentViggoEvent = res;
     });
   }
+
+  close() {
+    this.currentViggoEvent = null;
+  }
 }

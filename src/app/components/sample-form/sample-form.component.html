@@ -1,6 +1,13 @@
 <form>
-  <div>
-    IBAN:<br/>
+  <div class="form-field">
+    IBAN:<br />
     <input #stuckInput type="textbox" />
+  </div>
+
+  <div class="form-field">
+    Some complex field:<br />
+    <input #fieldValidationInput type="textbox"
+           [ngClass]="isValidationError ? 'validation-error' : ''"
+           />
   </div>
 </form>

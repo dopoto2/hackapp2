@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ViggoService } from "../../services/viggo.service";
-import { Subscription, of, Observable, fromEvent } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
 
 @Component({
@@ -11,19 +11,26 @@ import { delay, tap } from 'rxjs/operators';
 export class SampleFormComponent implements OnInit {
 
   isWaitingInStuckInput = false;
+  isValidationError = false;
 
   @ViewChild('stuckInput', { static: false }) stuckInput: ElementRef;
+  @ViewChild('fieldValidationInput', { static: false }) fieldValidationInput: ElementRef;
 
   constructor(private viggoService: ViggoService) { }
 
   ngOnInit() {
+    this.viggoService.emit("");
+  }
+
+  ngOnDestroy() {
+    this.viggoService.emit("");
   }
 
   ngAfterViewInit() {
     var stuckInputFocus$ = fromEvent(this.stuckInput.nativeElement, 'focus');
     stuckInputFocus$
       .pipe(
-        tap(() => { this.isWaitingInStuckInput = true}),
+        tap(() => { this.isWaitingInStuckInput = true }),
         delay(3000)
       )
       .subscribe(() => {
@@ -36,6 +43,21 @@ export class SampleFormComponent implements OnInit {
     stuckInputCancelWaiting$
       .subscribe(() => {
         this.isWaitingInStuckInput = false;
+      });
+
+    var fieldValidationInput$ = fromEvent(this.fieldValidationInput.nativeElement, 'blur');
+    fieldValidationInput$
+      .subscribe(() => {
+        const val = (<any>this.fieldValidationInput.nativeElement).value;
+        console.log("Got val" + val);
+        if (val === "") {
+          this.isValidationError = false;
+        }
+        else
+        {
+          this.isValidationError = true;
+          this.viggoService.emit("ValidationFailed");
+        }
       });
   }
 }

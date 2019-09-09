@@ -1,16 +1,20 @@
 <div *ngIf="currentViggoEvent?.name === 'StuckInField'" class="container">
-
   <div class="info-panel">
-    <b>
-      Looks like you're having trouble with this field
-    </b>
-    <br/>
-    <br/>
-    dfdf
-
+    <b>Looks like you're having trouble with the IBAN field</b>
+    <br />
+    <br />
+    Don't worry, you're not alone....
   </div>
+  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+</div>
+<div *ngIf="currentViggoEvent?.name === 'ValidationFailed'" class="container">
+  <div class="info-panel">
+    <b>Looks like you're having trouble with Some Complex Field</b>
+    <br />
+    <br />
+    fiedtred
+  </div>
+  <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
 
-  <img class="viggo-logo" src="../../../assets/visma-mov.gif"/>
-
-
+  <button (click)="close()" class="btn btn-success close-button">Close</button>
 </div>
