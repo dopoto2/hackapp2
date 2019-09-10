@@ -31,6 +31,6 @@ export enum predictionSize {
 
 export enum predictionRole {
   manager = 0,
-  user = 1,
+  accountant = 1,
   auditor = 2
 }

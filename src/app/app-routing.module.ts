@@ -7,10 +7,14 @@ import { PredictedSettingsPageComponent } from './components/predicted-settings-
 import { PredictionFormComponent } from './components/prediction-form/prediction-form.component';
 
 const routes: Routes = [
-  { path: 'predicted-settings', component: PredictedSettingsPageComponent},
+  {
+    path: 'predicted-settings/:userType',
+    component: PredictedSettingsPageComponent
+  },
+  { path: 'predicted-settings', component: PredictedSettingsPageComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'sample-form', component: SampleFormComponent },
-  { path: 'prediction-form', component: PredictionFormComponent},
+  { path: 'prediction-form', component: PredictionFormComponent },
   {
     path: '',
     redirectTo: '/dashboard',

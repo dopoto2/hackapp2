@@ -1,32 +1,121 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-      User profile settings
+      Advanced configuration for Tom
     </div>
-    <div class="card-body">
+    <div class="card-body" *ngIf="userType === 0">
       <form>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="predictedModel.predictedSettings1"/>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+            [checked]="predictedModel.predictedSettings1"
+          />
           <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
+            >Notification when accountant/auditor change data.</label
           >
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="predictedModel.predictedSettings2" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck2"
+            [checked]="predictedModel.predictedSettings2"
+          />
+          <label class="form-check-label" for="exampleCheck2"
+            >Add new members in the company.</label
           >
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="predictedModel.predictedSettings3"/>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck3"
+            [checked]="predictedModel.predictedSettings3"
+          />
+          <label class="form-check-label" for="exampleCheck3"
+            >Delete invoices.</label
+          >
+        </div>
+      </form>
+    </div>
+    <div class="card-body" *ngIf="userType === 1">
+      <form>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+            [checked]="predictedModel.predictedSettings1"
+          />
           <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
+            >Add/Delete invoices.</label
+          >
+        </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck2"
+            [checked]="predictedModel.predictedSettings2"
+          />
+          <label class="form-check-label" for="exampleCheck2"
+            >Do pay checks.</label
+          >
+        </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck3"
+            [checked]="predictedModel.predictedSettings3"
+          />
+          <label class="form-check-label" for="exampleCheck3"
+            >Create financial reports.</label
+          >
+        </div>
+      </form>
+    </div>
+    <div class="card-body" *ngIf="userType === 2">
+      <form>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+            [checked]="predictedModel.predictedSettings1"
+          />
+          <label class="form-check-label" for="exampleCheck1"
+            >Notification when data changed.</label
+          >
+        </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck2"
+            [checked]="predictedModel.predictedSettings2"
+          />
+          <label class="form-check-label" for="exampleCheck2"
+            >Write comments for invoices.</label
+          >
+        </div>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck3"
+            [checked]="predictedModel.predictedSettings3"
+          />
+          <label class="form-check-label" for="exampleCheck3"
+            >Create checks for accountant data.</label
           >
         </div>
       </form>
     </div>
     <div class="card-footer text-muted">
-        <div class="btn btn-primary" (click)="saveForm()">Save</div>
+      <div class="btn btn-primary" (click)="saveForm()">Save</div>
     </div>
   </div>
 </div>

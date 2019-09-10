@@ -14,6 +14,6 @@ export class DashboardComponent implements OnInit {
     this.viggoService.emit("dashboard");
   }
 
-  requestInfo() {
+  requestInfo() {{ eventName: "dashboard" }
   }
 }

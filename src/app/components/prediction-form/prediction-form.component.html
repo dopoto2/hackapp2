@@ -20,7 +20,7 @@
             class="form-control form-control-sm col-sm-11"
             disabled
             type="text"
-            value="Nl"
+            value="NL"
           />
         </div>
 
@@ -34,6 +34,8 @@
                 name="exampleRadios"
                 id="exampleRadios1"
                 value="option1"
+                [checked]="predictionFormModel.role === 0"
+                (click)="selectRole(0)"
               />
               <label class="form-check-label" for="exampleRadios1">
                 Manager
@@ -45,7 +47,8 @@
                 type="radio"
                 name="exampleRadios"
                 id="exampleRadios2"
-                value="option2"
+                [checked]="predictionFormModel.role === 2"
+                (click)="selectRole(2)"
               />
               <label class="form-check-label" for="exampleRadios2">
                 Auditor
@@ -58,9 +61,11 @@
                 name="exampleRadios"
                 id="exampleRadios3"
                 value="option3"
+                [checked]="predictionFormModel.role === 1"
+                (click)="selectRole(1)"
               />
               <label class="form-check-label" for="exampleRadios3">
-                User
+                Accountant
               </label>
             </div>
           </div>
