@@ -25,7 +25,7 @@ export class PredictedSettingsPageComponent implements OnInit {
 
     this.userType = parseInt(this.route.snapshot.paramMap.get('userType'), 10);
 
-    console.log(this.userType);
+    this.viggoService.emit('predictioninfo');
 
     if (this.userType === 0) {
       this.predictedModel.predictedSettings1 = 0;

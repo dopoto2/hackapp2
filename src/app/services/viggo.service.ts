@@ -31,6 +31,11 @@ export class ViggoService {
       name: 'SaveConfigurationSuggestion',
       title: 'Other configuration suggestions',
       userType: 1,
+    },
+    {
+      name: 'predictioninfo',
+      title: 'Machine learning suggestions',
+      userType: 1,
     }
     // ADD MORE SCENARIOS HERE...
   ];
