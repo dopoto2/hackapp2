@@ -119,3 +119,27 @@
 
   <!--<a><img src="https://image.flaticon.com/icons/png/512/25/25297.png" style="width:50px;height:50px" /></a>-->
 </div>
+
+<div class="container" *ngIf="currentViggoEvent?.name === 'SaveConfigurationSuggestion'">
+    <div class="info-panel">
+      <div class="title">Suggested pages</div>
+      <div class="card">
+        <div class="card-header">
+          Advanced settings
+        </div>
+        <div class="card-body">
+          <div class="row">
+              <div (click)="navigateToPredictedPage()" class="btn btn-primary"> Navigate </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="arrow-down"></div>
+      <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+    </div>
+
+    <span class="thanks">
+      <input type="checkbox" /> Thanks, won't need your help with Measure Definitions from now on.
+    </span>
+    <button (click)="closeAndChange()" class="btn btn-primary close-button">Close</button>
+  </div>
