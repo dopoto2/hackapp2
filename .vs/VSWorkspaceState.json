@@ -4,11 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\sample-form",
+    "\\src\\app\\components\\dashboard",
+    "\\src\\app\\components\\navbar",
     "\\src\\app\\components\\viggo-panel",
     "\\src\\app\\models",
     "\\src\\app\\services",
     "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\app\\services\\viggo.service.ts",
   "PreviewInSolutionExplorer": false
 }

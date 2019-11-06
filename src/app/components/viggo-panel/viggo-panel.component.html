@@ -1,18 +1,24 @@
 <div class="container" *ngIf="currentViggoEvent?.name === 'StuckInField'">
   <div class="info-panel">
-    <b>
-      Looks like you're having trouble filling out the IBAN number...
-
-    </b>
+    <b>Looks like you're having trouble filling out the IBAN number...</b>
     <br />
     <br />
-    Your IBAN number is SE12345633333. Would you like me to fill that in for you?
+    Below are some valid IBAN numbers you have used in our systems in the past. Click on
+    any of them to use it in the current form.
 
-    <br /><br />
-    <button class="btn btn-success">Yes, use this one!</button>
     <br />
     <br />
 
+    <a href=#>SE12345633333</a>
+    <div class="saved-in">Saved in Visma.net Financials &gt; My Settings on Dec 21, 2011</div>
+
+    <a href=#>BN123456A1234</a>
+    <div class="saved-in">Saved in Visma.net Insights &gt; Company on Jun 12, 2008</div>
+
+    <a href=#>TR123456345283</a>
+    <div class="saved-in">Saved in Visma.net Financials &gt; My Settings on Apr 8, 2007</div>
+
+  <hr/>
 
     <a href="javascript:void(0)" (click)="isIbanHelperVisible = !isIbanHelperVisible">What is IBAN?</a>
 
@@ -24,16 +30,12 @@
       IBAN is intended to supplement the regular account number.
     </div>
 
-
-
     <div class="arrow-down"></div>
     <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
 
-
-
   </div>
   <span class="thanks">
-    <input type="checkbox" /> Thanks, won't need your help with IBAN numbers from now on.
+    <input type="checkbox" /> Don't help me with IBAN numbers from now on.
   </span>
   <button (click)="close()" class="btn btn-primary close-button">Close</button>
 </div>
@@ -76,49 +78,6 @@
   <button (click)="close()" class="btn btn-primary close-button">Close</button>
 </div>
 
-<div class="container" *ngIf="currentViggoEvent?.name === 'dashboard'">
-  <div class="info-panel">
-    <b>
-      Looks like there is a problem with invoice 12323111...
-    </b>
-    <br />
-    <br />
-    Here are some suggestions of windows where you can fix it, based on what other users have done.
-    <ul>
-      <li><a href="#">Ledger</a></li>
-      <li><a href="#">Invoice</a></li>
-      <li><a href="#">Void invoice </a></li>
-    </ul>
-
-    <div class="arrow-down"></div>
-    <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
-
-  </div>
-  <span class="thanks">
-    <input type="checkbox" /> Thanks, won't need your help with Measure Definitions from now on.
-  </span>
-  <button (click)="close()" class="btn btn-primary close-button">Close</button>
-</div>
-
-<div class="info-panel" *ngIf="currentViggoEvent?.name === 'dashboarddd'">
-  <b>
-    Looks like there is a problem with invoice 12323111...
-  </b>
-  <br />
-  <br />
-  Here are some suggestions of windows where you can fix it, based on what other users have done.
-  <ul>
-    <li><a href="#">Ledger</a></li>
-    <li><a href="#">Invoice</a></li>
-    <li><a href="#">Void invoice </a></li>
-  </ul>
-
-  <hr>
-  Did you find it helpful?             <a href="$"> YES</a>    NO
-
-  <!--<a><img src="https://image.flaticon.com/icons/png/512/25/25297.png" style="width:50px;height:50px" /></a>-->
-</div>
-
 <div class="container" *ngIf="currentViggoEvent?.name === 'predictioninfo'">
     <div class="info-panel">
       <b>
@@ -144,7 +103,7 @@
     <button (click)="close()" class="btn btn-primary close-button">Close</button>
   </div>
 
-<div class="container" *ngIf="currentViggoEvent?.name === 'SaveConfigurationSuggestion'">
+<div class="container" *ngIf="currentViggoEvent?.name === 'XXSaveConfigurationSuggestion'">
     <div class="info-panel">
       <div class="title">Suggested pages</div>
       <div class="card">
@@ -153,6 +112,9 @@
         </div>
         <div class="card-body">
           <div class="row">
+              You have chosen the "Accountant" role in a Small Size Company.
+
+
               <div (click)="navigateToPredictedPage()" class="btn btn-primary"> Navigate </div>
           </div>
 
@@ -167,3 +129,32 @@
     </span>
     <button (click)="closeAndChange()" class="btn btn-primary close-button">Close</button>
   </div>
+
+  <div class="container" *ngIf="currentViggoEvent?.name === 'SaveConfigurationSuggestion'">
+      <div class="info-panel">
+        <b>This is nothing to worry about, really, but your current setup seems a bit unusual...</b>
+        <br />
+        <br />
+        Out of the users that select the Accountant role (*):
+        <br /><br />
+        <ul>
+          <li>85% also check the "Create financial reports" option.</li>
+          <li>15% leave the "Create financial reports" option unchecked
+            (<b>your current selection</b>).</li>
+        </ul>
+        <br /><br />
+
+        <div style="position:absolute; bottom: 29px; font-size:10px">(*) As observed from anonymous opt-in data collected by the
+          Visma PathFinder machine-learning tools.</div>
+        <br />
+        <br />
+
+        <div class="arrow-down"></div>
+        <img class="viggo-logo" src="../../../assets/visma-mov.gif" />
+
+      </div>
+      <span class="thanks">
+        <input type="checkbox" /> Don't show user input anomalies anymore
+      </span>
+      <button (click)="close()" class="btn btn-primary close-button">Close</button>
+    </div>
